@@ -1,5 +1,6 @@
 "use client";
 
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { getAllSmartFit } from "@/services/api";
 import { ISmartFitList, ISmartFitUnit } from "@/types/smartFitUnit";
@@ -61,7 +62,7 @@ export default function Home() {
 
       <Header />
 
-      <section className="flex flex-col gap-10 w-full max-w-[960px]  text-neutral-900 px-8 mt-20">
+      <section className="flex flex-col gap-10 w-full max-w-[960px]   text-neutral-900 px-8 mt-20">
         <section className="flex flex-col gap-8">
           <h1 className="text-5xl font-bold uppercase w-[350px] leading-tight">
             Reabertura smart fit
@@ -75,6 +76,8 @@ export default function Home() {
           está aberta e as medidas de segurança que estamos seguindo.
         </p>
       </section>
+
+      <Footer />
     </main>
   );
 }
