@@ -1,7 +1,10 @@
 "use client";
 
+import { Header } from "@/components/Header";
 import { getAllSmartFit } from "@/services/api";
 import { ISmartFitList, ISmartFitUnit } from "@/types/smartFitUnit";
+import { Autour_One } from "next/font/google";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -33,8 +36,8 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {allUnits.map((item) => (
+    <main className="flex items-center min-h-screen flex-col w-screen">
+      {/* {allUnits.map((item) => (
         <div key={item.id}>
           <h2>{item.title}</h2>
           <p dangerouslySetInnerHTML={{ __html: item.content }} />
@@ -54,7 +57,24 @@ export default function Home() {
             ))}
           </div>
         </div>
-      ))}
+      ))} */}
+
+      <Header />
+
+      <section className="flex flex-col gap-10 w-full max-w-[960px]  text-neutral-900 px-8 mt-20">
+        <section className="flex flex-col gap-8">
+          <h1 className="text-5xl font-bold uppercase w-[350px] leading-tight">
+            Reabertura smart fit
+          </h1>
+          <p className="h-3 w-full max-w-[120px] bg-neutral-950"></p>
+        </section>
+
+        <p className="text-[#333]">
+          O horário de funcionamento das nossas unidades está seguindo os
+          decretos de cada município. Por isso, confira aqui se a sua unidade
+          está aberta e as medidas de segurança que estamos seguindo.
+        </p>
+      </section>
     </main>
   );
 }
