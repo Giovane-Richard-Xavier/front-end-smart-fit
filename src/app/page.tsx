@@ -2,6 +2,7 @@
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { Legends } from "@/components/Legends";
 import { getAllSmartFit } from "@/services/api";
 import { ISmartFitList, ISmartFitUnit } from "@/types/smartFitUnit";
 import { Autour_One } from "next/font/google";
@@ -75,6 +76,8 @@ export default function Home() {
           decretos de cada município. Por isso, confira aqui se a sua unidade
           está aberta e as medidas de segurança que estamos seguindo.
         </p>
+        
+        <Legends />
       </section>
 
       <Footer />
