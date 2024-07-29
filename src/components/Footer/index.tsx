@@ -3,7 +3,7 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <div className="fixed bottom-0 w-full h-[200px] bg-[#333] text-white">
+    <div className="w-full h-[200px] bg-[#333] text-white">
       <section className="flex flex-col items-center justify-center h-full gap-3 w-full">
         <Image
           src="/images/logo.svg"

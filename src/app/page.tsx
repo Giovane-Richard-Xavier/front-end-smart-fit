@@ -2,6 +2,7 @@
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { InfoCard } from "@/components/InfoCard";
 import { Legends } from "@/components/Legends";
 import { getAllSmartFit } from "@/services/api";
 import { ISmartFitList, ISmartFitUnit } from "@/types/smartFitUnit";
@@ -39,31 +40,9 @@ export default function Home() {
 
   return (
     <main className="flex items-center min-h-screen flex-col w-screen">
-      {/* {allUnits.map((item) => (
-        <div key={item.id}>
-          <h2>{item.title}</h2>
-          <p dangerouslySetInnerHTML={{ __html: item.content }} />
-          <p>{item.opened ? "Aberta" : "Fechada"}</p>
-          <p>Máscara: {item.mask}</p>
-          <p>Toalha: {item.towel}</p>
-          <p>Bebedouro: {item.fountain}</p>
-          <p>Vestiário: {item.locker_room}</p>
-          <div>
-            <h3>Horários:</h3>
-            {item?.schedules?.map((schedule, index) => (
-              <div key={index}>
-                <p>
-                  {schedule.weekdays}: {schedule.hour}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))} */}
-
       <Header />
 
-      <section className="flex flex-col gap-10 w-full max-w-[960px]   text-neutral-900 px-8 mt-20">
+      <section className="flex flex-col gap-10 w-full max-w-[1044px]  text-neutral-900 px-8 my-20">
         <section className="flex flex-col gap-8">
           <h1 className="text-5xl font-bold uppercase w-[350px] leading-tight">
             Reabertura smart fit
@@ -76,8 +55,14 @@ export default function Home() {
           decretos de cada município. Por isso, confira aqui se a sua unidade
           está aberta e as medidas de segurança que estamos seguindo.
         </p>
-        
+
         <Legends />
+
+        <section className="grid grid-cols-3 gap-4">
+          {allUnits.map((item) => (
+            <InfoCard key={item.id} item={item} />
+          ))}
+        </section>
       </section>
 
       <Footer />
